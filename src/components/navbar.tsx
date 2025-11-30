@@ -92,9 +92,9 @@ export function Navbar() {
           color={isScrolling ? "blue-gray" : "white"}
           className="text-lg font-bold"
         >
-          Material Tailwind
+          HBKU AI4S
         </Typography>
-        <ul
+        {/* <ul
           className={`ml-10 hidden items-center gap-6 lg:flex ${
             isScrolling ? "text-gray-900" : "text-white"
           }`}
@@ -125,9 +125,9 @@ export function Navbar() {
           ) : (
             <Bars3Icon strokeWidth={2} className="h-6 w-6" />
           )}
-        </IconButton>
+        </IconButton> */}
       </div>
-      <Collapse open={open}>
+      {/* <Collapse open={open}>
         <div className="container mx-auto mt-4 rounded-lg bg-white px-6 py-5">
           <ul className="flex flex-col gap-4 text-gray-900">
             {NAV_MENU.map(({ name, icon: Icon, href }) => (
@@ -144,7 +144,7 @@ export function Navbar() {
             </a>
           </div>
         </div>
-      </Collapse>
+      </Collapse> */}
     </MTNavbar>
   );
 }
