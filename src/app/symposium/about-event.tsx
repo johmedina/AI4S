@@ -25,15 +25,15 @@ export function AboutEvent() {
         About the event
       </Typography> */}
       <Typography variant="h3" className="text-center" color="blue-gray">
-        About AI4S
+        Objective
       </Typography>
+
       <Typography
         variant="lead"
         className="mt-2 lg:max-w-5xl mb-8 w-full text-center font-normal !text-gray-500"
       >
-        The AI for Science Task Force (AISTF) was instituted by the Office of the Vice-President Research, HBKU. Tasks force members were selected to represent all the Colleges and Research Institutes in HBKU. The function of AISTF was to overview the landscape of AI4S activity in the University and provide recommendations that will allow the research community engaged in the sciences and engineering to leverage rapidly evolving AI tools.  AISTF met regularly during the summer of 2025 and culminated with a half-day workshop on September 3rd, 2025.
+        To bootstrap AI for Science (AI4S) research in HBKU, the Cluster Team will organize a 2 day workshop in late January 2026. The aim is to introduce the latest AI4S research to HBKU and the wider research community in Qatar. As recommended in the AI4S taskforce, the focus of the Symposium will be on Material Science, Bio-Multimodal Learning and AI  Methods for Science and Engineering. 
 
-        AISTF was divided into four sub-groups that captured the interests of the members and entities that they represent. Sub-groups members met with their colleagues (in their entities) and external stakeholders, wherever relevant, to capture their perceptions and needs related to AI4S. An HBKU wide online survey was rolled out in August 2025. The findings from the subgroups, the survey and internal deliberations led to seven recommendations. The report also contains four case studies of how AI can be used in the Sciences.
       </Typography>
       {/* <div className="mt-8 w-full grid grid-cols-1 md:grid-cols-2 gap-4 ">
         {EVENT_INFO.map((props, idx) => (
