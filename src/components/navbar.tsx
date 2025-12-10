@@ -86,7 +86,7 @@ export function Navbar() {
           </Typography>
         </Link>
         <ul
-          className={`ml-10 hidden items-center gap-6 lg:flex ${
+          className={`ml-10 items-center gap-6 lg:flex ${
             isScrolling ? "text-gray-900" : "text-white"
           }`}
         >
