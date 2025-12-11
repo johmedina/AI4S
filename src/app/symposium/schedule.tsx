@@ -205,7 +205,7 @@ export function Schedule() {
             variant="lead"
             className="text-center lg:max-w-5xl font-normal !text-gray-500"
           >
-            Day 1 of the Symposium will be targeted towards students and junior researchers. Invited speakers will give up to a 2 hour lecture on a relevant topic. There will be 3 tutorials, one on each topic on Materials/Bio/Methods. The format will be sequential which will make it possible to attend all the tutorials. 
+            Day 1 of the Symposium will be targeted towards students and junior researchers. Invited speakers will give up to a 4 hour lecture on a relevant topic. There will be 3 tutorials, one on each topic on Materials/Bio/Methods. The format will be sequential which will make it possible to attend all the tutorials. 
 	    <br /><br />
 	    Day 2 will be open to a wider audience. There will be 4 sessions and a keynote. Each session will have a theme and consist of two speakers who will present for 15 minutes each and then a 30 min moderated Q/A Session and panel. The end of Day 2 will also feature a keynote on the AI Infrastructure landscape. We will leave sufficient time for attendees to network and form potential collaborations
   
