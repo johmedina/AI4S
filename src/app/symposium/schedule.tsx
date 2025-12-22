@@ -23,7 +23,7 @@ interface ScheduleItem {
 const DAY1_SCHEDULE: ScheduleItem[] = [
   {
     time: "8:00 - 8:10",
-    title: "Welcome",
+    title: "Welcome and Housekeeping",
     speaker: "Sanjay Chawla",
     affiliation: "QCRI, HBKU",
   },
@@ -43,7 +43,7 @@ const DAY1_SCHEDULE: ScheduleItem[] = [
   },
   {
     time: "8:10 - 2:00",
-    title: "Tutorial 3: AI for Health/Bio on Materials",
+    title: "Tutorial 3: AI for Health / Bio Sciences",
     speaker: "Surya Hari",
     affiliation: "Caltech",
   },
@@ -52,7 +52,7 @@ const DAY1_SCHEDULE: ScheduleItem[] = [
 const DAY2_SCHEDULE: ScheduleItem[] = [
   {
     time: "8:00 - 8:10",
-    title: "Intro and Housekeeping",
+    title: "Welcome and Housekeeping",
     speaker: "Sanjay Chawla",
     affiliation: "QCRI, HBKU",
   },
