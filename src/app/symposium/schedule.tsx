@@ -8,7 +8,20 @@ import {
   TabsHeader,
   Card,
   CardBody,
+  Accordion,
+  AccordionHeader,
+  AccordionBody,
 } from "@material-tailwind/react";
+import { ChevronDownIcon } from "@heroicons/react/24/solid";
+import scheduleData from "./info.json";
+
+interface SubtimingItem {
+  time: string;
+  title: string;
+  speaker: string;
+  affiliation?: string;
+  abstract?: string;
+}
 
 interface ScheduleItem {
   time: string;
@@ -18,181 +31,250 @@ interface ScheduleItem {
   introducer?: string;
   moderator?: string;
   speakers?: Array<{ name: string; affiliation?: string }>;
+  abstract?: string;
+  subtimings?: SubtimingItem[];
 }
 
-const DAY1_SCHEDULE: ScheduleItem[] = [
-  {
-    time: "8:00 - 8:10",
-    title: "Welcome and Housekeeping",
-    speaker: "Sanjay Chawla",
-    affiliation: "QCRI, HBKU",
-  },
-  {
-    time: "8:10 - 2:00",
-    title: "Tutorial 1: AI for Science Methods",
-    speaker: "Raonic Bogdan",
-    affiliation: "ETH Zurich",
-    introducer: "Hasan Kurban",
-  },
-  {
-    time: "8:10 - 2:00",
-    title: "Tutorial 2: AI for Material Science",
-    speaker: "Taylor Sparks",
-    affiliation: "University of Utah",
-    introducer: "Atef Zekri",
-  },
-  {
-    time: "8:10 - 2:00",
-    title: "Tutorial 3: AI for Health / Bio Sciences",
-    speaker: "Surya Hari",
-    affiliation: "Caltech",
-  },
-];
+const DAY1_SCHEDULE: ScheduleItem[] = scheduleData.schedule.day1 as ScheduleItem[];
+const DAY2_SCHEDULE: ScheduleItem[] = scheduleData.schedule.day2 as ScheduleItem[];
 
-const DAY2_SCHEDULE: ScheduleItem[] = [
-  {
-    time: "8:00 - 8:10",
-    title: "Welcome and Housekeeping",
-    speaker: "Sanjay Chawla",
-    affiliation: "QCRI, HBKU",
-  },
-  {
-    time: "8:10 - 8:20",
-    title: "HBKU Introductions",
-    speakers: [
-      { name: "Dr. Eyad Ahmed Masad" , affiliation: "Vice President, HBKU Research" },
-      { name: "Dr. Adnan Abu-Dayya", affiliation:"Associate Vice President, HBKU Research" },
-    ],
-  },
-  {
-    time: "8:30 - 10:00",
-    title: "Materials Talks and Panel (Talks 15 min each)",
-    speakers: [
-      { name: "Prof. Yu Yang", affiliation: "UCST" },
-      { name: "Prof. Taylor Sparks", affiliation: "University of Utah" },
-      { name: "Speaker from QEERI" },
-    ],
-    moderator: "Atef Zekri",
-  },
-  {
-    time: "10:00 - 10:20",
-    title: "Break",
-  },
-  {
-    time: "10:20 - 12:00",
-    title: "Bio/Health Talks",
-    speakers: [
-      { name: "Salem", affiliation: "MBZUAI" },
-      { name: "Pranam", affiliation: "Penn State" },
-      { name: "Raghavendra", affiliation: "QCRI, HBKU" },
-      { name: "Surya Hari", affiliation: "Caltech" },
-    ],
-    moderator: "Kabir Biswas",
-  },
-  {
-    time: "12:00 - 1:00",
-    title: "Lunch and Prayers",
-  },
-  {
-    time: "1:00 - 2:30",
-    title: "AI Methods",
-    speakers: [
-      { name: "Gokberk", affiliation: "Turkey" },
-      { name: "Alperen", affiliation: "Turkey" },
-      { name: "Raonic Bordan", affiliation: "ETH Zurich" },
-    ],
-    moderator: "Hasan Kurban",
-  },
-  {
-    time: "2:30 - 3:00",
-    title: "Break and Prayers",
-  },
-  {
-    time: "3:00 - 4:15",
-    title: "AI Infrastructure Keynote",
-    speaker: "Addision Snell",
-    introducer: "Othmane",
-  },
-];
+function SubtimingCard({ 
+  subtiming, 
+  parentIndex, 
+  subtimingIndex, 
+  openSubtimingIndex, 
+  onToggleSubtiming 
+}: { 
+  subtiming: SubtimingItem;
+  parentIndex: number;
+  subtimingIndex: number;
+  openSubtimingIndex: string | null;
+  onToggleSubtiming: (index: string) => void;
+}) {
+  const uniqueIndex = `${parentIndex}-${subtimingIndex}`;
+  const isOpen = openSubtimingIndex === uniqueIndex;
+  const hasAbstract = !!subtiming.abstract;
 
-function ScheduleCard({ item }: { item: ScheduleItem }) {
   return (
-    <Card className="mb-4 shadow-md">
-      <CardBody className="p-6">
-        <div className="flex flex-col md:flex-row md:items-start gap-4">
-          <div className="flex-shrink-0">
-            <Typography
-              variant="small"
-              className="font-semibold text-blue-gray-900"
-            >
-              {item.time}
-            </Typography>
-          </div>
-          <div className="flex-1">
-            <Typography variant="h6" color="blue-gray" className="mb-2">
-              {item.title}
-            </Typography>
-            
-            {/* Single speaker */}
-            {item.speaker && !item.speakers && (
-              <>
-                <Typography variant="paragraph" className="font-medium mb-1">
-                  {item.speaker}
+    <Card className="mb-3 shadow-sm">
+      <Accordion open={isOpen}>
+        <AccordionHeader
+          onClick={() => hasAbstract && onToggleSubtiming(uniqueIndex)}
+          className={`p-0 border-0 ${hasAbstract ? 'cursor-pointer' : 'cursor-default'}`}
+        >
+          <CardBody className="p-4 w-full">
+            <div className="flex flex-col md:flex-row md:items-start gap-3">
+              <div className="flex-shrink-0">
+                <Typography
+                  variant="small"
+                  className="font-semibold text-blue-gray-700"
+                >
+                  {subtiming.time}
                 </Typography>
-                {item.affiliation && (
-                  <Typography
-                    variant="small"
-                    className="text-gray-600 mb-2"
-                  >
-                    {item.affiliation}
-                  </Typography>
-                )}
-              </>
-            )}
-            
-            {/* Multiple speakers */}
-            {item.speakers && item.speakers.length > 0 && (
-              <div className="mb-2">
-                {item.speakers.map((speaker, idx) => (
-                  <div key={idx} className="mb-1 flex items-baseline gap-2">
-                    <Typography variant="paragraph" className="font-medium">
-                      {speaker.name}
+              </div>
+              <div className="flex-1">
+                <div className="flex items-start justify-between gap-4">
+                  <div className="flex-1">
+                    <Typography variant="paragraph" color="blue-gray" className="mb-1 font-semibold">
+                      {subtiming.title}
                     </Typography>
-                    {speaker.affiliation && (
+                    <Typography variant="small" className="font-medium mb-1">
+                      {subtiming.speaker}
+                    </Typography>
+                    {subtiming.affiliation && (
                       <Typography
                         variant="small"
                         className="text-gray-600"
                       >
-                        ({speaker.affiliation})
+                        {subtiming.affiliation}
                       </Typography>
                     )}
                   </div>
-                ))}
+                  
+                  {hasAbstract && (
+                    <div className="flex-shrink-0">
+                      <ChevronDownIcon
+                        className={`h-4 w-4 text-gray-600 transition-transform ${
+                          isOpen ? 'transform rotate-180' : ''
+                        }`}
+                      />
+                    </div>
+                  )}
+                </div>
               </div>
-            )}
-            
-            {/* Moderator */}
-            {item.moderator && (
-              <Typography variant="small" className="text-gray-500 italic mt-2">
-                Moderator: {item.moderator}
-              </Typography>
-            )}
-            
-            {/* Introducer */}
-            {item.introducer && (
-              <Typography variant="small" className="text-gray-500 italic mt-2">
-                Introduced by: {item.introducer}
-              </Typography>
-            )}
-          </div>
-        </div>
-      </CardBody>
+            </div>
+          </CardBody>
+        </AccordionHeader>
+        
+        {hasAbstract && (
+          <AccordionBody className="px-4 pb-4 pt-0">
+            <div>
+              <Typography variant="small" className="font-medium mb-1">Abstract</Typography>
+            </div>
+            <Typography
+              color="blue-gray"
+              className="font-normal text-gray-600 whitespace-pre-line text-sm"
+            >
+              {subtiming.abstract}
+            </Typography>
+          </AccordionBody>
+        )}
+      </Accordion>
+    </Card>
+  );
+}
+
+function ScheduleCard({ item, index, openIndex, onToggle, openSubtimingIndex, onToggleSubtiming }: { 
+  item: ScheduleItem; 
+  index: number;
+  openIndex: number | null;
+  onToggle: (index: number) => void;
+  openSubtimingIndex: string | null;
+  onToggleSubtiming: (index: string) => void;
+}) {
+  const isOpen = openIndex === index;
+  const hasAbstract = !!item.abstract && !item.subtimings;
+  const hasSubtimings = !!item.subtimings && item.subtimings.length > 0;
+
+  return (
+    <Card className="mb-4 shadow-md overflow-hidden">
+      <Accordion open={isOpen}>
+        <AccordionHeader
+          onClick={() => hasAbstract && onToggle(index)}
+          className={`p-0 border-0 ${hasAbstract ? 'cursor-pointer' : 'cursor-default'}`}
+        >
+          <CardBody className="p-6 w-full">
+            <div className="flex flex-col md:flex-row md:items-start gap-4">
+              <div className="flex-shrink-0">
+                <Typography
+                  variant="small"
+                  className="font-semibold text-blue-gray-900"
+                >
+                  {item.time}
+                </Typography>
+              </div>
+              <div className="flex-1">
+                <div className="flex items-start justify-between gap-4">
+                  <div className="flex-1">
+                    <Typography variant="h6" color="blue-gray" className="mb-2">
+                      {item.title}
+                    </Typography>
+                    
+                    {/* Single speaker */}
+                    {item.speaker && !item.speakers && (
+                      <>
+                        <Typography variant="paragraph" className="font-medium mb-1">
+                          {item.speaker}
+                        </Typography>
+                        {item.affiliation && (
+                          <Typography
+                            variant="small"
+                            className="text-gray-600 mb-2"
+                          >
+                            {item.affiliation}
+                          </Typography>
+                        )}
+                      </>
+                    )}
+                    
+                    {/* Multiple speakers (only if no subtimings) */}
+                    {item.speakers && item.speakers.length > 0 && !hasSubtimings && (
+                      <div className="mb-2">
+                        {item.speakers.map((speaker, idx) => (
+                          <div key={idx} className="mb-1 flex items-baseline gap-2">
+                            <Typography variant="paragraph" className="font-medium">
+                              {speaker.name}
+                            </Typography>
+                            {speaker.affiliation && (
+                              <Typography
+                                variant="small"
+                                className="text-gray-600"
+                              >
+                                ({speaker.affiliation})
+                              </Typography>
+                            )}
+                          </div>
+                        ))}
+                      </div>
+                    )}
+                    
+                    {/* Subtimings */}
+                    {hasSubtimings && (
+                      <div className="mt-4">
+                        {item.subtimings!.map((subtiming, idx) => (
+                          <SubtimingCard
+                            key={idx}
+                            subtiming={subtiming}
+                            parentIndex={index}
+                            subtimingIndex={idx}
+                            openSubtimingIndex={openSubtimingIndex}
+                            onToggleSubtiming={onToggleSubtiming}
+                          />
+                        ))}
+                      </div>
+                    )}
+                    
+                    {/* Moderator */}
+                    {item.moderator && (
+                      <Typography variant="small" className="text-gray-500 italic mt-2">
+                        Moderator: {item.moderator}
+                      </Typography>
+                    )}
+                    
+                    {/* Introducer */}
+                    {item.introducer && (
+                      <Typography variant="small" className="text-gray-500 italic mt-2">
+                        Introduced by: {item.introducer}
+                      </Typography>
+                    )}
+                  </div>
+                  
+                  {/* Chevron icon - only show if abstract exists */}
+                  {hasAbstract && (
+                    <div className="flex-shrink-0">
+                      <ChevronDownIcon
+                        className={`h-5 w-5 text-gray-600 transition-transform ${
+                          isOpen ? 'transform rotate-180' : ''
+                        }`}
+                      />
+                    </div>
+                  )}
+                </div>
+              </div>
+            </div>
+          </CardBody>
+        </AccordionHeader>
+        
+        {hasAbstract && (
+          <AccordionBody className="px-6 pb-6 pt-0">
+            <div>
+              <Typography variant="paragraph" className="font-medium mb-1">Abstract</Typography>
+            </div>
+            <Typography
+              color="blue-gray"
+              className="font-normal text-gray-600 whitespace-pre-line"
+            >
+              {item.abstract}
+            </Typography>
+          </AccordionBody>
+        )}
+      </Accordion>
     </Card>
   );
 }
 
 export function Schedule() {
   const [activeTab, setActiveTab] = useState("Day1");
+  const [openIndex, setOpenIndex] = useState<number | null>(null);
+  const [openSubtimingIndex, setOpenSubtimingIndex] = useState<string | null>(null);
+
+  const handleToggle = (index: number) => {
+    setOpenIndex(openIndex === index ? null : index);
+  };
+
+  const handleToggleSubtiming = (index: string) => {
+    setOpenSubtimingIndex(openSubtimingIndex === index ? null : index);
+  };
 
   return (
     <section className="py-8 px-8 lg:py-20 bg-gray-50">
@@ -200,15 +282,6 @@ export function Schedule() {
         <div className="flex flex-col items-center mb-12">
           <Typography variant="h3" className="text-center mb-4" color="blue-gray">
             Schedule
-          </Typography>
-          <Typography
-            variant="lead"
-            className="text-center lg:max-w-5xl font-normal !text-gray-500"
-          >
-            Day 1 of the Symposium will be targeted towards students and junior researchers. Invited speakers will give up to a 4 hour lecture on a relevant topic. There will be 3 tutorials, one on each topic on Materials/Bio/Methods. The format will be sequential which will make it possible to attend all the tutorials. 
-	    <br /><br />
-	    Day 2 will be open to a wider audience. There will be 4 sessions and a keynote. Each session will have a theme and consist of two speakers who will present for 15 minutes each and then a 30 min moderated Q/A Session and panel. The end of Day 2 will also feature a keynote on the AI Infrastructure landscape. We will leave sufficient time for attendees to network and form potential collaborations
-  
           </Typography>
         </div>
 
@@ -218,14 +291,22 @@ export function Schedule() {
               <Tab
                 value="Day1"
                 className="font-medium"
-                onClick={() => setActiveTab("Day1")}
+                onClick={() => {
+                  setActiveTab("Day1");
+                  setOpenIndex(null); // Reset accordion when switching tabs
+                  setOpenSubtimingIndex(null); // Reset subtiming accordions
+                }}
               >
                 Day 1
               </Tab>
               <Tab
                 value="Day2"
                 className="font-medium"
-                onClick={() => setActiveTab("Day2")}
+                onClick={() => {
+                  setActiveTab("Day2");
+                  setOpenIndex(null); // Reset accordion when switching tabs
+                  setOpenSubtimingIndex(null); // Reset subtiming accordions
+                }}
               >
                 Day 2
               </Tab>
@@ -237,7 +318,15 @@ export function Schedule() {
           {activeTab === "Day1" && (
             <div>
               {DAY1_SCHEDULE.map((item, idx) => (
-                <ScheduleCard key={idx} item={item} />
+                <ScheduleCard 
+                  key={idx} 
+                  item={item} 
+                  index={idx}
+                  openIndex={openIndex}
+                  onToggle={handleToggle}
+                  openSubtimingIndex={openSubtimingIndex}
+                  onToggleSubtiming={handleToggleSubtiming}
+                />
               ))}
             </div>
           )}
@@ -246,7 +335,15 @@ export function Schedule() {
             <div>
               {DAY2_SCHEDULE.length > 0 ? (
                 DAY2_SCHEDULE.map((item, idx) => (
-                  <ScheduleCard key={idx} item={item} />
+                  <ScheduleCard 
+                    key={idx} 
+                    item={item}
+                    index={idx}
+                    openIndex={openIndex}
+                    onToggle={handleToggle}
+                    openSubtimingIndex={openSubtimingIndex}
+                    onToggleSubtiming={handleToggleSubtiming}
+                  />
                 ))
               ) : (
                 <Card className="shadow-md">

@@ -1,0 +1,240 @@
+{
+  "schedule": {
+    "day1": [
+      {
+        "time": "8:00 - 8:10",
+        "title": "Welcome",
+        "speaker": "Dr. Sanjay Chawla",
+        "affiliation": "Qatar Computing Research Institute (QCRI), HBKU"
+      },
+      {
+        "time": "8:10 - 2:00",
+        "title": "Tutorial: Deep Learning for Physical Systems",
+        "speaker": "Raonic Bogdan",
+        "affiliation": "ETH Zurich",
+        "introducer": "Hasan Kurban",
+        "abstract": "In the first hour of this tutorial, I will give a brief overview of key techniques in physics-based deep learning. I will then dive into state-of-the-art neural operator methods, discussing approaches for both uniform and non-uniform discretizations of physical systems. We will compare the strengths and limitations of different neural approaches and the types of problems they are suited to. The tutorial will cover Fourier and convolutional neural operators for structured data, as well as graph-based neural networks for unstructured domains."
+      },
+      {
+        "time": "8:10 - 2:00",
+        "title": "Tutorial: Best Practices in Materials Informatics",
+        "speaker": "Prof. Taylor Sparks",
+        "affiliation": "University of Utah",
+        "introducer": "Atef Zekri",
+        "abstract": "Materials informatics—the application of data science and machine learning to materials research—has become a powerful approach for accelerating materials discovery and design. Unlike traditional machine learning, materials informatics must contend with small, heterogeneous, and expensive datasets, strong physical constraints, and the need for interpretability and uncertainty awareness. This workshop introduces the foundations of materials informatics, explaining why data-driven methods are needed, how they differ from conventional ML workflows, and how they fit within the structure–property–processing–performance paradigm. The workshop then focuses on best practices for turning materials data into actionable knowledge and ultimately into new materials. Topics include data sourcing and cleaning, featurization and representation of materials, model selection and validation, avoiding common pitfalls such as data leakage, and using uncertainty-aware models for decision-making. Through practical examples and case studies—including predictive modeling and generative approaches—participants will learn how to move from models to real materials applications using open, reproducible tools."
+      },
+      {
+        "time": "8:10 - 2:00",
+        "title": "Tutorial 3: AI for Health/Bio on Materials",
+        "speaker": "Surya Hari",
+        "affiliation": "Californina Institute of Technology",
+        "abstract": "In this tutorial, we shall cover three key areas - 1) TRILL, a pipeline to load, fine tune and save a protein model 2) A classify a dataset of histopathology images into different phenotypes."
+      }
+    ],
+    "day2": [
+      {
+        "time": "8:00 - 8:10",
+        "title": "Intro and Housekeeping",
+        "speaker": "Dr. Sanjay Chawla",
+        "affiliation": "Qatar Computing Research Institute (QCRI), HBKU"
+      },
+      {
+        "time": "8:10 - 8:20",
+        "title": "HBKU Introductions",
+        "speakers": [
+          {
+            "name": "Dr. Eyad Ahmed Masad",
+            "affiliation": "Vice President, HBKU Research"
+          },
+          {
+            "name": "Dr. Adnan Abu-Dayya",
+            "affiliation": "Associate Vice President, HBKU Research"
+          }
+        ]
+      },
+      {
+        "time": "8:20 - 9:35",
+        "title": "Keynote: Big Questions for HPC-AI",
+        "speaker": "Mr. Addison Snell",
+        "introducer": "Othmane",
+        "abstract": "The massive growth of hyperscale AI has pushed the HPC-AI market to a critical inflection point in 2025. The market is increasingly defined by companies spending tens of billions of dollars per year, building massive data centers hundreds of megawatts — even gigawatts — at a time. As a result, national sovereignty sensitivity is on the rise, and we see independent technology tracks from the U.S., China, Japan, the EU, the UK, India, and others. This has significant implications throughout the industry, including for storage, networking, and data management. Addison Snell of Intersect360 Research has been tracking HPC industry dynamics for more than 20 years. In his talk, he will look at the big questions facing the developers, practitioners, and strategy makers in the HPC-AI industry, with research fueled by the HPC-AI Leadership Organization (HALO)."
+      },
+      {
+        "time": "9:35 - 10:00",
+        "title": "Break"
+      },
+      {
+        "time": "10:00 - 11:30",
+        "title": "Materials Talks and Panel",
+        "moderator": "Atef Zekri",
+        "subtimings": [
+          {
+            "time": "10:00 - 10:15",
+            "title": "Talk Title 1",
+            "speaker": "Prof. Yu Yang",
+            "affiliation": "UCST",
+            "abstract": "Abstract for Prof. Yu Yang's talk goes here."
+          },
+          {
+            "time": "10:15 - 10:30",
+            "title": "The LLM revolution in materials research: from data extraction to crystal design",
+            "speaker": "Prof. Taylor Sparks",
+            "affiliation": "University of Utah",
+            "abstract": "The advent of large language models (LLMs) in late 2022 marked a watershed moment for artificial intelligence, one that has rapidly transformed education, knowledge work, and research itself. Materials science is no exception. For over a century, scientists have pursued the prediction and design of crystal structures, progressing from empirical rules to data-driven models. Now, advances in generative AI, including variational autoencoders, generative adversarial networks, diffusion models, and LLMs, are redefining this pursuit. In this talk, I will compare traditional generative frameworks with emerging LLM-based methods for structure generation, highlighting our recent CrysText approach, which uses LLMs for text-conditioned generation of crystallographic information files (CIFs). This strategy achieves precise adherence to specified constraints while accelerating the discovery process. I will also discuss how LLMs are transforming materials data extraction, enabling automated database creation, large-scale literature mining, and data-informed decision-making. Together, these developments signal a new era in which AI is fundamentally reshaping how materials are discovered, understood, and designed."
+          },
+          {
+            "time": "10:30 - 10:45",
+            "title": "Talk Title 3",
+            "speaker": "Speaker from QEERI",
+            "affiliation": "QEERI",
+            "abstract": "Abstract for QEERI speaker's talk goes here."
+          }
+        ]
+      },
+      {
+        "time": "11:30 - 12:30",
+        "title": "Lunch and Prayers"
+      },
+      {
+        "time": "12:30 - 2:00",
+        "title": "Bio/Health Talks",
+        "moderator": "Kabir Biswas",
+        "subtimings": [
+          {
+            "time": "12:30 - 12:45",
+            "title": "GFlowNets: Diverse Generative AI for Molecular and Biological Sequence Design",
+            "speaker": "Prof. Salem Lahlou",
+            "affiliation": "Mohamed bin Zayed University of Artificial Intelligence (MBZUAI)",
+            "abstract": "Scientific discovery requires exploring vast combinatorial spaces where promising candidates are scattered across multiple regions rather than concentrated at a single optimum. Generative Flow Networks (GFlowNets) address this by learning to sample objects proportionally to rewards rather than simply maximizing them, enabling diverse high-quality generation. I will present the core ideas behind GFlowNets and demonstrate applications in molecular and biological sequence design, including recent work on mRNA therapeutics that balance competing objectives like stability, translation efficiency, and codon adaptation."
+          },
+          {
+            "time": "12:45 - 1:00",
+            "title": "Design of Programmable Biologics with Discrete Generative Algorithms",
+            "speaker": "Prof. Pranam Chatterjee",
+            "affiliation": "University of Pennsylvania",
+            "abstract": "The Chatterjee Lab at the University of Pennsylvania develops generative algorithms to design functional biologics directly from sequence. Our work has centered on protein language models that de novo design peptides to bind and modulate undruggable disease targets, with experimental validation across rare neurodegenerative disorders, pediatric cancers, and viral infections. However, because therapeutic design depends not only on binding but also on developability, specificity, and cellular context, we have developed new discrete diffusion modeling algorithms to generate peptides, proteins, mRNAs, and isoform-specific modulators, enable controllable, Pareto-efficient generation. We have extended further to discrete flow-based generative models to refine highly specific, domain- and motif-resolved binders under competing objectives. Beyond therapeutics, we have also applied our discrete generative frameworks to metal-binding peptides and environmental toxins for bioremediation applications. Finally, we’ve recently pioneered a new class of generative models, termed Schrödinger Bridges, that not only model biological states but also the trajectories connecting them, from protein folding to cell-state transitions, establishing a unified and programmable framework for molecular design grounded in physics and context-aware dynamics."
+          },
+          {
+            "time": "1:00 - 1:15",
+            "title": "AI in Biomedicine: Past and Present",
+            "speaker": "Dr. Raghvendra Mall ",
+            "affiliation": "Qatar Computing Research Institute (QCRI), HBKU",
+            "abstract": "Dr. Raghvendra Mall is former Director of Computational Biology at the Biotech Research Center of TII in Abu Dhabi, UAE. He is currently Scientific Advisor for Eternal and a senior consultant for QCRI and Mercor. Dr. Mall’s research lies at the intersection of computational biology, immunology, and applied machine learning. His work centers on biological network analysis, including regulatory network inference, master regulator analysis, and disease module identification for therapeutic target discovery. In structural bioinformatics, he develops deep learning and protein language model (PLM)-based approaches for protein property prediction, encompassing protein solubility, crystallization propensity, toxicity, and applications in drug repurposing or novel immunotherapies."
+          },
+          {
+            "time": "1:15 - 1:30",
+            "title": "Bio/Health Talk Title 4",
+            "speaker": "Surya Hari",
+            "affiliation": "California Institute of Technology",
+            "abstract": "Data cleaning in histopathology - batch effect in histopathology causes spurious correlations between clinically relevant outcomes and confounding variables like source hospital. In this talk, we’ll go over some sources of these confounders, some existing pipelines that aim to overcome the errors and look at them in practice."
+          }
+        ]
+      },
+      {
+        "time": "2:00 - 2:30",
+        "title": "Break and Prayers"
+      },
+      {
+        "time": "2:30 - 4:00",
+        "title": "AI Methods",
+        "moderator": "Hasan Kurban",
+        "subtimings": [
+          {
+            "time": "2:30 - 2:45",
+            "title": "AI Methods Talk Title 1",
+            "speaker": "Gokberk",
+            "affiliation": "Turkey",
+            "abstract": "Abstract for Gokberk's talk goes here."
+          },
+          {
+            "time": "2:45 - 3:00",
+            "title": "Bridging the Scientific Data Gap: Generative Synthesis and Robust Generalization",
+            "speaker": "Prof. Alptekin Temizel",
+            "affiliation": "Middle East Technical University (METU), Turkey",
+            "abstract": "While Artificial Intelligence has shown transformative potential across scientific domains, its application in specialized fields like medicine is frequently limited by the quality and nature of scientific data. Unlike general-purpose datasets, scientific data is characterized by scarcity, class imbalance (particularly in rare pathologies), privacy-driven sensitivity, and high structural complexity. This talk will start by addressing the foundational issues of data quality, particularly the challenges of data duplication and inter-observer variability, where experts may provide conflicting labels for the same clinical instance. To mitigate these constraints, we discuss the shift from traditional data processing to AI-driven synthesis, showcasing how Generative Models and Large Language Models (LLMs) can be used for sophisticated data augmentation. However, the ultimate metric of success is not just performance, but generalization. We conclude by examining whether these models are truly generalizable and investigate the alignment gap: whether the features learned by a model align with the biological observations and diagnostic reasoning of medical professionals."
+          },
+          {
+            "time": "3:00 - 3:15",
+            "title": "Recent Advances in Deep Learning in Scientific Computing",
+            "speaker": "Raonic Bordan",
+            "affiliation": "ETH Zurich",
+            "abstract": "This talk will survey recent advances in applying deep learning to scientific computing, spanning operator learning for PDEs, foundation models for physical systems, and generative approaches to uncertainty in chaotic dynamical regimes."
+          }
+        ]
+      }
+    ]
+  },
+  "speakers": [
+    {
+      "name": "Raonic Bogdan",
+      "affiliation": "ETH Zurich",
+      "title": "Professor / Title",
+      "bio": "Bogdan is a PhD student at ETH Zurich. He holds a Bachelor’s degree in Physics and Mathematics from École Polytechnique and a Master’s in Applied Mathematics from ETH. His research focuses on the intersection of deep learning and scientific computing, including neural operators, foundation models for physics and generative approaches to turbulence modeling.",
+      "img": "/image/speakers/bogdan.jpeg"
+    },
+    {
+      "name": "Prof. Taylor Sparks",
+      "affiliation": "University of Utah",
+      "title": "Professor / Title",
+      "bio": "Dr. Sparks is an Professor of Materials Science and Engineering at the University of Utah. He holds a BS in MSE from the UofU, MS in Materials from UCSB, and PhD in Applied Physics from Harvard University. He was a Royal Society Wolfson Visiting Fellow at the University of Liverpool and a recipient of the NSF CAREER Award and a speaker for TEDxSaltLakeCity. He is active in TMS, MRS, and ACERS societies. He is currently the Editor-in-Chief for the Integrating Materials and Manufacturing Innovation and the Director of Graduate Affairs for the John and Marcia Price College of Engineering. When he’s not in the lab you can find him running his podcast “Materialism,” creating materials educational content for his YouTube channel, or canyoneering with his 4 kids in southern Utah.",
+      "img": "/image/speakers/taylorsparks.jpeg"
+    },
+    {
+      "name": "Surya Narayanan Hari",
+      "affiliation": "California Institute of Technology",
+      "title": "Professor / Title",
+      "bio": "Surya Narayanan Hari (website, LinkedIn, twitter/X) is a fourth year PhD student in the biology program at the California Institute of Technology, where he uses AI as model systems to understand the brain. Previously, Surya completed his undergraduate and masters education at Stanford University where he studied Economics, Mathematics and Operations Research. Previously, Surya performed stand up comedy to cancer patients from economically underprivileged backgrounds waiting in line to see a doctor in India, which inspired him to do cancer research at the Dana Farber Cancer Institute between his time at Stanford and Caltech. At Caltech, Surya received the Chen Graduate Innovators award, given to fund radical innovative ideas. Surya is currently on the job market for internships and full time opportunities!",
+      "img": "/image/speakers/surya.jpeg"
+    },
+    {
+      "name": "Yu Yang",
+      "affiliation": "UCST",
+      "title": "Professor / Title",
+      "bio": "Speaker bio goes here. This is a placeholder bio that describes the speaker's background, research interests, and achievements.",
+      "img": "/image/blank.jpg"
+    },
+    {
+      "name": "Prof. Salem Lahlou",
+      "affiliation": "Mohamed bin Zayed University of Artificial Intelligence (MBZUAI)",
+      "title": "Professor / Title",
+      "bio": "Salem Lahlou is an Assistant Professor at the Mohamed bin Zayed University of Artificial Intelligence (MBZUAI). His research focuses on GFlowNets, LLM reasoning, and uncertainty estimation, aiming to build more capable and reliable AI for science. He is a core contributor to the GFlowNet framework and creator of the torchgfn library. Salem obtained his PhD from Mila and Université de Montréal under Yoshua Bengio, with prior experience at Google Brain, TII, and IBM Research.",
+      "img": "/image/blank.jpg"
+    },
+    {
+      "name": "Prof. Pranam Chatterjee",
+      "affiliation": "University of Pennsylvania",
+      "title": "Professor / Title",
+      "bio": "Pranam Chatterjee is an Assistant Professor of Bioengineering and Computer and Information Science and the Africk-Lesley Distinguished Scholar of Innovation at the University of Pennsylvania. His Programmable Biology Group develops new discrete generative models for the de novo design of biologics, spanning from algorithmic theory to pre-clinical validation in vitro and in vivo. The lab specifically develops therapeutics for rare pediatric diseases, infertility, and substance use disorders, as well as molecules for environmental bioremediation. Having earned his SB, SM, and PhD from MIT, Professor Chatterjee has received the MIRA Award, Hartwell Individual Biomedical Research Award, and multiple NIH and foundation grants for his work. He has also co-founded Gameto, Inc., UbiquiTx, Inc., AtomBioworks, Inc., and Recognition Bio, Inc., which translates his research into fertility-related solutions, RNA medicines, and cancer therapeutics, respectively.",
+      "img": "/image/blank.jpg"
+    },
+    {
+      "name": "Dr. Raghvendra Mall",
+      "affiliation": "Qatar Computing Research Institute (QCRI), HBKU",
+      "title": "Professor / Title",
+      "bio": "Dr. Mall’s career has spanned positions at prestigious institutions such as TII, Caltech, St. Jude Children's Research Hospital, QCRI, and KU Leuven. Dr. Mall is a senior IEEE member and was awarded with “Top 30 IEEE Early Career Professional” in 2024. Dr. Mall has made significant contributions to the field with 110+ publications including high-impact journals like Cell, Nature Medicine, Nature, Science Immunology and Nucleic Acids Research with a record of over 5,000 citations. His work has been pivotal in computational immunology, particularly, in understanding the role of PANoptosis in inflammatory diseases, and multi-omics driven analysis of cancer.",
+      "img": "/image/blank.jpg"
+    },
+    {
+      "name": "Dr. Gokberk Cinbis ",
+      "affiliation": "Turkey",
+      "title": "Professor / Title",
+      "bio": "Speaker bio goes here. This is a placeholder bio that describes the speaker's background, research interests, and achievements.",
+      "img": "/image/blank.jpg"
+    },
+    {
+      "name": "Prof. Alptekin Temizel",
+      "affiliation": "Middle East Technical University (METU), Turkey",
+      "title": "Professor / Title",
+      "bio": "Alptekin Temizel is a Professor at the Graduate School of Informatics at the Middle East Technical University (METU), Turkey. He earned his Ph.D. from the Center for Vision, Speech and Signal Processing (CVSSP) at the University of Surrey, UK, in 2006. He is the Principal Investigator of the Deep Learning and Computer Vision Research Lab and serves as an NVIDIA Deep Learning Institute Certified Instructor and University Ambassador. From 2016 to 2017, he was on sabbatical at the University of Birmingham, UK. He also collaborates with various companies on the design and deployment of computer vision and AI systems. His research focuses on computer vision, machine learning, deep learning, and GPU computing.",
+      "img": "/image/blank.jpg"
+    },
+    {
+      "name": "Mr. Addison Snell ",
+      "affiliation": "Intersect360 Research",
+      "title": "Professor / Title",
+      "bio": "Addison Snell is a veteran of the High Performance Computing industry and the co-founder and CEO of Intersect360 Research, delivering data and insights covering the HPC-AI market and coordinating the HPC-AI Leadership Organization (HALO). Addison is a frequent keynote speaker and panel moderator at industry events, has testified before the U.S.-China Economic & Security Review Commission Congressional Subcommittee, and was named one of 2010’s “People to Watch” by HPCwire. Addison is a competent bridge player, an excellent Scrabble player, and a puzzle and game enthusiast, particularly word puzzles. In 2022 he achieved a life “bucket list” goal of constructing crosswords for the New York Times ",
+      "img": "/image/blank.jpg"
+    }
+  ]
+}
+

@@ -4,81 +4,9 @@ import {
   Typography,
 } from "@material-tailwind/react";
 import SpeakerCard from "@/components/speaker-card";
+import infoData from "./info.json";
 
-// Example speaker data - replace with actual speaker information
-const SPEAKERS = [
-  {
-    name: "Raonic Bogdan",
-    affiliation: "ETH Zurich",
-    title: "Professor / Title",
-    bio: "Speaker bio goes here. This is a placeholder bio that describes the speaker's background, research interests, and achievements.",
-    img: "/image/blank.jpg",
-  },
-  {
-    name: "Taylor Sparks",
-    affiliation: "University of Utah",
-    title: "Professor / Title",
-    bio: "Speaker bio goes here. This is a placeholder bio that describes the speaker's background, research interests, and achievements.",
-    img: "/image/blank.jpg",
-  },
-  {
-    name: "Surya Narayanan Hari",
-    affiliation: "California Institute of Technology",
-    title: "Professor / Title",
-    bio: "Speaker bio goes here. This is a placeholder bio that describes the speaker's background, research interests, and achievements.",
-    img: "/image/blank.jpg",
-  },
-  {
-    name: "Yu Yang",
-    affiliation: "UCST",
-    title: "Professor / Title",
-    bio: "Speaker bio goes here. This is a placeholder bio that describes the speaker's background, research interests, and achievements.",
-    img: "/image/blank.jpg",
-  },
-  {
-    name: "Salem",
-    affiliation: "MBZUAI",
-    title: "Professor / Title",
-    bio: "Speaker bio goes here. This is a placeholder bio that describes the speaker's background, research interests, and achievements.",
-    img: "/image/blank.jpg",
-  },
-  {
-    name: "Pranam",
-    affiliation: "Penn State",
-    title: "Professor / Title",
-    bio: "Speaker bio goes here. This is a placeholder bio that describes the speaker's background, research interests, and achievements.",
-    img: "/image/blank.jpg",
-  },
-  {
-    name: "Raghavendra",
-    affiliation: "QCRI, HBKU",
-    title: "Professor / Title",
-    bio: "Speaker bio goes here. This is a placeholder bio that describes the speaker's background, research interests, and achievements.",
-    img: "/image/blank.jpg",
-  },
-  {
-    name: "Gokberk",
-    affiliation: "Turkey",
-    title: "Professor / Title",
-    bio: "Speaker bio goes here. This is a placeholder bio that describes the speaker's background, research interests, and achievements.",
-    img: "/image/blank.jpg",
-  },
-  {
-    name: "Alperen",
-    affiliation: "Turkey",
-    title: "Professor / Title",
-    bio: "Speaker bio goes here. This is a placeholder bio that describes the speaker's background, research interests, and achievements.",
-    img: "/image/blank.jpg",
-  },
-  {
-    name: "Addision Snell",
-    affiliation: "UCST",
-    title: "Professor / Title",
-    bio: "Speaker bio goes here. This is a placeholder bio that describes the speaker's background, research interests, and achievements.",
-    img: "/image/blank.jpg",
-  },
-
-];
+const SPEAKERS = infoData.speakers;
 
 export function Speakers() {
   return (
@@ -97,7 +25,7 @@ export function Speakers() {
         </div>
         
         <div className="max-w-7xl mx-auto">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+          <div className="grid grid-cols-1  gap-8">
             {SPEAKERS.map((speaker, idx) => (
               <SpeakerCard key={idx} {...speaker} />
             ))}
