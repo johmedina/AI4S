@@ -24,16 +24,15 @@ export function AboutEvent() {
       {/* <Typography variant="h6" className="text-center mb-2" color="orange">
         About the event
       </Typography> */}
-      <Typography variant="h3" className="text-center" color="blue-gray">
+      {/* <Typography variant="h3" className="text-center" color="blue-gray">
         Objective
-      </Typography>
+      </Typography> */}
 
       <Typography
         variant="lead"
         className="mt-2 lg:max-w-5xl mb-8 w-full text-center font-normal !text-gray-500"
       >
-        To bootstrap AI for Science (AI4S) research in HBKU, the Cluster Team will organize a 2 day workshop in late January 2026. The aim is to introduce the latest AI4S research to HBKU and the wider research community in Qatar. As recommended in the AI4S taskforce, the focus of the Symposium will be on Material Science, Bio-Multimodal Learning and AI  Methods for Science and Engineering. 
-
+        The aim of the symposium is to bootstrap AI for Science (AI4S) research in HBKU and Qatar. Based on the recommendation of the AI4S Taskforce, the focus of the workshop will be on: AI infrastructure, AI Methods for Science, Material Science and Biomedical Learning. We have a strong international line-up of speakers. Day 1 is dedicated to tutorials and Day 2 to talks and panels. Attendance to the Symposium is by invitation.
       </Typography>
       {/* <div className="mt-8 w-full grid grid-cols-1 md:grid-cols-2 gap-4 ">
         {EVENT_INFO.map((props, idx) => (

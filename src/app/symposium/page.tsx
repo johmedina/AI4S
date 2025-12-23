@@ -91,7 +91,7 @@ export default function Symposium() {
       <Navbar />
       <Hero />
       {/* <SponsoredBy /> */}
-      {/* <AboutEvent /> */}
+      <AboutEvent />
       <Schedule />
       {/* <OurStats /> */}
       <Speakers />

@@ -159,7 +159,15 @@
             "speaker": "Raonic Bordan",
             "affiliation": "ETH Zurich",
             "abstract": "This talk will survey recent advances in applying deep learning to scientific computing, spanning operator learning for PDEs, foundation models for physical systems, and generative approaches to uncertainty in chaotic dynamical regimes."
+          },
+          {
+            "time": "3:15 - 3:30",
+            "title": "Talk 4",
+            "speaker": "Dr. Nour Makke",
+            "affiliation": "Qatar Computing Research Institute (QCRI), HBKU",
+            "abstract": "TBC"
           }
+
         ]
       }
     ]
@@ -170,21 +178,21 @@
       "affiliation": "ETH Zurich",
       "title": "Professor / Title",
       "bio": "Bogdan is a PhD student at ETH Zurich. He holds a Bachelor’s degree in Physics and Mathematics from École Polytechnique and a Master’s in Applied Mathematics from ETH. His research focuses on the intersection of deep learning and scientific computing, including neural operators, foundation models for physics and generative approaches to turbulence modeling.",
-      "img": "/image/speakers/bogdan.jpeg"
+      "img": "/image/blank.jpg"
     },
     {
       "name": "Prof. Taylor Sparks",
       "affiliation": "University of Utah",
       "title": "Professor / Title",
       "bio": "Dr. Sparks is an Professor of Materials Science and Engineering at the University of Utah. He holds a BS in MSE from the UofU, MS in Materials from UCSB, and PhD in Applied Physics from Harvard University. He was a Royal Society Wolfson Visiting Fellow at the University of Liverpool and a recipient of the NSF CAREER Award and a speaker for TEDxSaltLakeCity. He is active in TMS, MRS, and ACERS societies. He is currently the Editor-in-Chief for the Integrating Materials and Manufacturing Innovation and the Director of Graduate Affairs for the John and Marcia Price College of Engineering. When he’s not in the lab you can find him running his podcast “Materialism,” creating materials educational content for his YouTube channel, or canyoneering with his 4 kids in southern Utah.",
-      "img": "/image/speakers/taylorsparks.jpeg"
+      "img": "/image/blank.jpg"
     },
     {
       "name": "Surya Narayanan Hari",
       "affiliation": "California Institute of Technology",
       "title": "Professor / Title",
       "bio": "Surya Narayanan Hari (website, LinkedIn, twitter/X) is a fourth year PhD student in the biology program at the California Institute of Technology, where he uses AI as model systems to understand the brain. Previously, Surya completed his undergraduate and masters education at Stanford University where he studied Economics, Mathematics and Operations Research. Previously, Surya performed stand up comedy to cancer patients from economically underprivileged backgrounds waiting in line to see a doctor in India, which inspired him to do cancer research at the Dana Farber Cancer Institute between his time at Stanford and Caltech. At Caltech, Surya received the Chen Graduate Innovators award, given to fund radical innovative ideas. Surya is currently on the job market for internships and full time opportunities!",
-      "img": "/image/speakers/surya.jpeg"
+      "img": "/image/blank.jpg"
     },
     {
       "name": "Yu Yang",
@@ -212,7 +220,7 @@
       "affiliation": "Qatar Computing Research Institute (QCRI), HBKU",
       "title": "Professor / Title",
       "bio": "Dr. Mall’s career has spanned positions at prestigious institutions such as TII, Caltech, St. Jude Children's Research Hospital, QCRI, and KU Leuven. Dr. Mall is a senior IEEE member and was awarded with “Top 30 IEEE Early Career Professional” in 2024. Dr. Mall has made significant contributions to the field with 110+ publications including high-impact journals like Cell, Nature Medicine, Nature, Science Immunology and Nucleic Acids Research with a record of over 5,000 citations. His work has been pivotal in computational immunology, particularly, in understanding the role of PANoptosis in inflammatory diseases, and multi-omics driven analysis of cancer.",
-      "img": "/image/blank.jpg"
+      "img": "/image/speakers/raghvendra.jpg"
     },
     {
       "name": "Dr. Gokberk Cinbis ",
@@ -226,13 +234,20 @@
       "affiliation": "Middle East Technical University (METU), Turkey",
       "title": "Professor / Title",
       "bio": "Alptekin Temizel is a Professor at the Graduate School of Informatics at the Middle East Technical University (METU), Turkey. He earned his Ph.D. from the Center for Vision, Speech and Signal Processing (CVSSP) at the University of Surrey, UK, in 2006. He is the Principal Investigator of the Deep Learning and Computer Vision Research Lab and serves as an NVIDIA Deep Learning Institute Certified Instructor and University Ambassador. From 2016 to 2017, he was on sabbatical at the University of Birmingham, UK. He also collaborates with various companies on the design and deployment of computer vision and AI systems. His research focuses on computer vision, machine learning, deep learning, and GPU computing.",
-      "img": "/image/blank.jpg"
+      "img": "/image/speakers/alptekin.jpg"
     },
     {
       "name": "Mr. Addison Snell ",
       "affiliation": "Intersect360 Research",
       "title": "Professor / Title",
       "bio": "Addison Snell is a veteran of the High Performance Computing industry and the co-founder and CEO of Intersect360 Research, delivering data and insights covering the HPC-AI market and coordinating the HPC-AI Leadership Organization (HALO). Addison is a frequent keynote speaker and panel moderator at industry events, has testified before the U.S.-China Economic & Security Review Commission Congressional Subcommittee, and was named one of 2010’s “People to Watch” by HPCwire. Addison is a competent bridge player, an excellent Scrabble player, and a puzzle and game enthusiast, particularly word puzzles. In 2022 he achieved a life “bucket list” goal of constructing crosswords for the New York Times ",
+      "img": "/image/blank.jpg"
+    },
+    {
+      "name": "Dr. Nour Makke",
+      "affiliation": "Qatar Computing Research Institute (QCRI), HBKU",
+      "title": "Professor / Title",
+      "bio": "TBC",
       "img": "/image/blank.jpg"
     }
   ]
