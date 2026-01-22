@@ -12,8 +12,9 @@ import {
   Accordion,
   AccordionHeader,
   AccordionBody,
+  Tooltip,
 } from "@material-tailwind/react";
-import { ChevronDownIcon } from "@heroicons/react/24/solid";
+import { ChevronDownIcon, DocumentArrowDownIcon } from "@heroicons/react/24/solid";
 import scheduleData from "./info.json";
 
 interface SubtimingItem {
@@ -36,6 +37,7 @@ interface ScheduleItem {
   subtimings?: SubtimingItem[];
   setup?: string;
   location?: string;
+  presentation?: string;
 }
 
 const DAY1_SCHEDULE: ScheduleItem[] = scheduleData.schedule.day1 as ScheduleItem[];
@@ -187,6 +189,24 @@ function ScheduleCard({ item, index, openIndex, onToggle, openSubtimingIndex, on
   const isOpen = openIndex === index;
   const hasAbstract = !!item.abstract && !item.subtimings;
   const hasSubtimings = !!item.subtimings && item.subtimings.length > 0;
+  const hasPresentation = !!item.presentation;
+  
+  // Convert absolute path to web-relative path
+  const getPresentationPath = (path: string): string => {
+    if (path.startsWith('/Users/') || path.startsWith('/public/')) {
+      // Extract the path after /public/
+      const publicIndex = path.indexOf('/public/');
+      if (publicIndex !== -1) {
+        return path.substring(publicIndex + '/public'.length);
+      }
+      // If it's already a relative path starting with /pdfs, return as is
+      if (path.startsWith('/pdfs/')) {
+        return path;
+      }
+    }
+    // If it's already a web path, return as is
+    return path.startsWith('/') ? path : `/${path}`;
+  };
 
   return (
     <Card className="mb-4 shadow-md overflow-hidden">
@@ -287,16 +307,32 @@ function ScheduleCard({ item, index, openIndex, onToggle, openSubtimingIndex, on
                     )}
                   </div>
                   
-                  {/* Chevron icon - only show if abstract exists */}
-                  {hasAbstract && (
-                    <div className="flex-shrink-0">
+                  {/* Icons - PDF and Chevron */}
+                  <div className="flex-shrink-0 flex items-center gap-2">
+                    {/* PDF icon - show if presentation exists */}
+                    {hasPresentation && (
+                      <Tooltip content="Open Presentation" placement="top">
+                        <a
+                          href={getPresentationPath(item.presentation!)}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="text-red-600 hover:text-red-700 transition-colors cursor-pointer"
+                          onClick={(e) => e.stopPropagation()}
+                        >
+                          <DocumentArrowDownIcon className="h-5 w-5" />
+                        </a>
+                      </Tooltip>
+                    )}
+                    
+                    {/* Chevron icon - only show if abstract exists */}
+                    {hasAbstract && (
                       <ChevronDownIcon
                         className={`h-5 w-5 text-gray-600 transition-transform ${
                           isOpen ? 'transform rotate-180' : ''
                         }`}
                       />
-                    </div>
-                  )}
+                    )}
+                  </div>
                 </div>
               </div>
             </div>

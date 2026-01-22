@@ -20,7 +20,8 @@
         "introducer": "Dr. Hasan Kurban",
         "abstract": "In the first hour of this tutorial, I will give a brief overview of key techniques in physics-based deep learning. I will then dive into state-of-the-art neural operator methods, discussing approaches for both uniform and non-uniform discretizations of physical systems. We will compare the strengths and limitations of different neural approaches and the types of problems they are suited to. The tutorial will cover Fourier and convolutional neural operators for structured data, as well as graph-based neural networks for unstructured domains.",
         "setup": "Please bring your laptop as the tutorial will be hands-on. We will work in Google Colab https://colab.research.google.com/drive/1MAo6bclGi8ebWoAzHYEvPTdhEBLC2d8H?usp=sharing. The attendees should install pytorch and  torch_geometric.",
-        "location": "Multupurpose Hall, Ground floor, B1"
+        "location": "Multupurpose Hall, Ground floor, B1",
+        "presentation": "/pdfs/BogdanRaonic_AI4S_Tutorial.pdf"
       },
       {
         "time": "8:10 - 2:00",
