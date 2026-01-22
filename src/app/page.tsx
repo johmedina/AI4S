@@ -19,7 +19,7 @@ export default function Portfolio() {
       {/* <OurStats /> */}
       {/* <EventContent /> */}
       {/* <Faq /> */}
-      <Footer />
+      {/* <Footer /> */}
     </>
   );
 }

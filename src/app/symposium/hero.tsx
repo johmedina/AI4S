@@ -18,7 +18,29 @@ function Hero() {
         <Typography
           variant="lead"
           color="white"
-          className="mt-1 mb-12 w-full md:max-w-full lg:max-w-2xl"
+          className="mt-5 w-full md:max-w-full lg:max-w-2xl"
+        >
+          Multipurpose Hall, Ground floor, B1
+        </Typography>
+        <Typography
+          variant="lead"
+          color="white"
+          className="w-full md:max-w-full lg:max-w-2xl"
+        >
+          Research and Development Complex (RDC), HBKU {" "}
+          <a
+            href="https://maps.app.goo.gl/E3MtoX3sxuckUwne7?g_st=ic"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="underline hover:text-gray-200 transition-colors"
+          >
+            (view map)
+          </a>
+        </Typography>
+        <Typography
+          variant="lead"
+          color="white"
+          className="mb-12 w-full md:max-w-full lg:max-w-2xl"
         >
           Doha, Qatar
         </Typography>

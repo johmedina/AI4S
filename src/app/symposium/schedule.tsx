@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import type { ReactNode } from "react";
 import {
   Typography,
   Tab,
@@ -33,10 +34,60 @@ interface ScheduleItem {
   speakers?: Array<{ name: string; affiliation?: string }>;
   abstract?: string;
   subtimings?: SubtimingItem[];
+  setup?: string;
+  location?: string;
 }
 
 const DAY1_SCHEDULE: ScheduleItem[] = scheduleData.schedule.day1 as ScheduleItem[];
 const DAY2_SCHEDULE: ScheduleItem[] = scheduleData.schedule.day2 as ScheduleItem[];
+
+function linkifyText(
+  text: string,
+  linkLabel: string = "(Open link)"
+): ReactNode {
+  const urlRegex = /(https?:\/\/[^\s]+|www\.[^\s]+)/g;
+  const matches = Array.from(text.matchAll(urlRegex));
+  if (matches.length === 0) return text;
+
+  const nodes: ReactNode[] = [];
+  let lastIndex = 0;
+
+  for (let i = 0; i < matches.length; i++) {
+    const match = matches[i];
+    const raw = match[0];
+    const index = match.index ?? 0;
+
+    if (index > lastIndex) nodes.push(text.slice(lastIndex, index));
+
+    let urlText = raw;
+    let trailing = "";
+    while (urlText.length > 0 && ".,);:!?]".includes(urlText[urlText.length - 1])) {
+      trailing = urlText[urlText.length - 1] + trailing;
+      urlText = urlText.slice(0, -1);
+    }
+
+    const href = urlText.startsWith("http") ? urlText : `https://${urlText}`;
+
+    nodes.push(
+      <a
+        key={`link-${i}-${index}`}
+        href={href}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="text-blue-700 underline"
+      >
+        {linkLabel}
+      </a>
+    );
+
+    if (trailing) nodes.push(trailing);
+    lastIndex = index + raw.length;
+  }
+
+  if (lastIndex < text.length) nodes.push(text.slice(lastIndex));
+  return nodes;
+}
+
 
 function SubtimingCard({ 
   subtiming, 
@@ -103,22 +154,23 @@ function SubtimingCard({
                 </div>
               </div>
             </div>
+            {hasAbstract && (
+                <AccordionBody className="px-6 pb-6 pt-0">
+                  <div>
+                    <Typography variant="paragraph" className="font-medium mb-1">Abstract</Typography>
+                  </div>
+                  <Typography
+                    color="blue-gray"
+                    className="font-normal text-gray-600 whitespace-pre-line"
+                  >
+                    {subtiming.abstract}
+                  </Typography>
+                </AccordionBody>
+              )}
+
           </CardBody>
         </AccordionHeader>
         
-        {hasAbstract && (
-          <AccordionBody className="px-4 pb-4 pt-0">
-            <div>
-              <Typography variant="small" className="font-medium mb-1">Abstract</Typography>
-            </div>
-            <Typography
-              color="blue-gray"
-              className="font-normal text-gray-600 whitespace-pre-line text-sm"
-            >
-              {subtiming.abstract}
-            </Typography>
-          </AccordionBody>
-        )}
       </Accordion>
     </Card>
   );
@@ -216,15 +268,21 @@ function ScheduleCard({ item, index, openIndex, onToggle, openSubtimingIndex, on
                     
                     {/* Moderator */}
                     {item.moderator && (
-                      <Typography variant="small" className="text-gray-500 italic mt-2">
+                      <Typography variant="small" className="text-gray-600 italic mt-2">
                         Moderator: {item.moderator}
                       </Typography>
                     )}
                     
                     {/* Introducer */}
                     {item.introducer && (
-                      <Typography variant="small" className="text-gray-500 italic mt-2">
+                      <Typography variant="small" className="text-gray-600 italic mt-2">
                         Introduced by: {item.introducer}
+                      </Typography>
+                    )}
+
+                    {item.location && (
+                      <Typography variant="small" className="text-gray-600 mt-2">
+                        Location: {item.location}
                       </Typography>
                     )}
                   </div>
@@ -248,13 +306,41 @@ function ScheduleCard({ item, index, openIndex, onToggle, openSubtimingIndex, on
         {hasAbstract && (
           <AccordionBody className="px-6 pb-6 pt-0">
             <div>
-              <Typography variant="paragraph" className="font-medium mb-1">Abstract</Typography>
+              <Typography variant="paragraph" className="font-medium mb-1 font-bold">Abstract</Typography>
             </div>
             <Typography
               color="blue-gray"
               className="font-normal text-gray-600 whitespace-pre-line"
             >
               {item.abstract}
+            </Typography>
+          </AccordionBody>
+        )}
+
+        {item.setup && (
+          <AccordionBody className="px-6 pb-6 pt-0">
+            <div>
+              <Typography variant="paragraph" className="font-medium mb-1 font-bold">Tutorial Setup Requirements</Typography>
+            </div>
+            <Typography
+              color="blue-gray"
+              className="font-normal text-gray-600 whitespace-pre-line"
+            >
+              {linkifyText(item.setup)}
+            </Typography>
+          </AccordionBody>
+        )}
+
+        {item.location_instructions && (
+          <AccordionBody className="px-6 pb-6 pt-0">
+            <div>
+              <Typography variant="paragraph" className="font-medium mb-1 font-bold">Location Instructions</Typography>
+            </div>
+            <Typography
+              color="blue-gray"
+              className="font-normal text-gray-600 whitespace-pre-line"
+            >
+              {item.location_instructions}
             </Typography>
           </AccordionBody>
         )}
@@ -317,6 +403,12 @@ export function Schedule() {
         <div className="max-w-4xl mx-auto">
           {activeTab === "Day1" && (
             <div>
+              <Typography
+                variant="lead"
+                className="font-normal !text-gray-500"
+              >
+                All tutorials are in parallel.
+              </Typography>
               {DAY1_SCHEDULE.map((item, idx) => (
                 <ScheduleCard 
                   key={idx} 
